@@ -1,5 +1,5 @@
 ---
-templateKey: index-page
+templateKey: office-page
 location: Porto
 country: Portugal
 countryAbbreviation: PT
