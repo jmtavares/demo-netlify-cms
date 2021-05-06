@@ -128,7 +128,7 @@ ProductPageTemplate.propTypes = {
   }),
 }
 
-const ProductPage = ({ data }) => {
+const OfficePage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
@@ -148,7 +148,7 @@ const ProductPage = ({ data }) => {
   )
 }
 
-ProductPage.propTypes = {
+OfficePage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -156,7 +156,7 @@ ProductPage.propTypes = {
   }),
 }
 
-export default ProductPage
+export default OfficePage
 
 export const productPageQuery = graphql`
   query ProductPage($id: String!) {
