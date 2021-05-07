@@ -14,4 +14,14 @@ hero:
     Kurji-Evans.
   tag: Fun Facts
   image: /img/screenshot-2021-05-07-at-12.17.45.png
+media_and_copy_block:
+  title: Our Community matters
+  cta:
+    text: Our Blog
+    href: /
+  media_side: left
+  large_media: /img/screenshot-2021-05-07-at-14.35.32.png
+  small_media: /img/screenshot-2021-05-07-at-14.35.40.png
+  summary: This is an example of text for the user to read, it explains who we are
+    and what we do. Mindera is a software agency.
 ---
