@@ -58,11 +58,11 @@ const LearnMore = styled(Link)`
   margin-top: 20px;
 `
 
-const JobOpenings = ({ data }) => {
+const JobOpenings = ({ data, location }) => {
   return (
     <JobOpeningsOuterContainer>
       <JobOpeningsInnerContainer>
-        <StyledTitle>Job Openings (57) in Leicester</StyledTitle>
+        <StyledTitle>Job Openings (57) in {location}</StyledTitle>
         <StyledText>{data.summary}</StyledText>
         <StatsContainer>
           <Stat>

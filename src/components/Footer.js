@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import styled from '@emotion/styled'
 import { Link } from './Typography'
 
@@ -19,7 +19,26 @@ const StyledLink = styled(Link)`
   font-size: 16px;
 `
 
-const Footer = ({ offices }) => {
+const Footer = () => {
+  const { allMarkdownRemark } = useStaticQuery(graphql`
+    query FooterTemplate {
+      allMarkdownRemark(
+        filter: { frontmatter: { templateKey: { eq: "office-page" } } }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              location
+            }
+            fields {
+              slug
+            }
+          }
+        }
+      }
+    }
+  `)
+
   return (
     <footer className="footer has-text-white-ter">
       <div className="content has-text-centered"></div>
@@ -62,7 +81,7 @@ const Footer = ({ offices }) => {
               <section className="menu">
                 <ColumnTitle>Offices</ColumnTitle>
                 <Ul className="menu-list">
-                  {offices.map((office) => {
+                  {allMarkdownRemark.edges.map((office) => {
                     return (
                       <li key={office.node.fields.slug}>
                         <StyledLink
@@ -85,22 +104,3 @@ const Footer = ({ offices }) => {
 }
 
 export default Footer
-
-export const pageQuery = graphql`
-  query FooterTemplate {
-    allMarkdownRemark(
-      filter: { frontmatter: { templateKey: { eq: "office-page" } } }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            location
-          }
-          fields {
-            slug
-          }
-        }
-      }
-    }
-  }
-`

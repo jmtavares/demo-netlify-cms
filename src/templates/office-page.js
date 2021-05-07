@@ -12,6 +12,7 @@ import Footer from '../components/Footer'
 const OfficePage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
   const {
+    location,
     address,
     hero,
     email,
@@ -30,12 +31,12 @@ const OfficePage = ({ data }) => {
 
       <Stats data={stats} />
 
-      <JobOpenings data={job_openings} />
+      <JobOpenings data={job_openings} location={location} />
 
       <Quote data={quote} />
 
       <Map data={JSON.parse(map)} />
-      <Footer offices={data.allMarkdownRemark.edges} />
+      <Footer />
     </Layout>
   )
 }
@@ -44,21 +45,6 @@ export default OfficePage
 
 export const pageQuery = graphql`
   query OfficePageTemplate($id: String!) {
-    allMarkdownRemark(
-      filter: { frontmatter: { templateKey: { eq: "office-page" } } }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            location
-          }
-          fields {
-            slug
-          }
-        }
-      }
-    }
-
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         location
