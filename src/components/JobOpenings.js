@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import Img from 'gatsby-image'
 import { Title, Text, Link } from './Typography'
 
 const JobOpeningsOuterContainer = styled.div`

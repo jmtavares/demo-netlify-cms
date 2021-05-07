@@ -22,7 +22,7 @@ collections:
         name: "templateKey"
         widget: "hidden"
         default: "office-page"
-        
+
       - label: "Location" 
         name: "location" 
         widget: "string"
@@ -130,5 +130,37 @@ collections:
             widget: "string"
           - label: "Media"
             name: "media"
-            widget: "image"      
+            widget: "image"    
+
+      - label: "Media Carousel"
+        name: "media_carousel"
+        widget: "object"
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "text"
+          - label: "Images"
+            name: "images"
+            widget: "list"
+            summary: '{{fields.image}}'
+            fields:
+              - label: "Image"
+                name: "image"
+                widget: "image"
+
+      - label: "Map"
+        name: "map"
+        widget: "map"
+
+      - label: "Social Navigation"
+        name: "social_navigation"
+        widget: "list"
+        fields: 
+          - label: "Label"
+            name: "label"
+            widget: string
+          - label: "Network Code"
+            name: "network_code"
+            widget: "select"
+            options: ["facebook", "twitter", "instagram", "linkedin"]
       

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import Img from 'gatsby-image'
-import { Title, Text, Link } from './Typography'
+import { Title, Text } from './Typography'
 
 const QuoteContainer = styled.div`
   max-width: 1152px;
