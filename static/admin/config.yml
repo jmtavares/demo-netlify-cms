@@ -14,7 +14,7 @@ public_folder: /img
 collections:
   - name: "social_navigation"
     label: "Social Navigation"
-    src: "src/page/social"
+    folder: "src/page/social"
     create: true
     slug: "{{network_code}}"
     fields:
@@ -22,7 +22,6 @@ collections:
         name: "templateKey"
         widget: "hidden"
         default: "social-page"
-
       - label: "Label" 
         name: "label" 
         widget: "string"
@@ -33,7 +32,6 @@ collections:
       - label: "href" 
         name: "href" 
         widget: "string"
-
 
   - name: "office"
     label: "Office"
