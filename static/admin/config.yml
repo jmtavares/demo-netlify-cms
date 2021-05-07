@@ -86,3 +86,15 @@ collections:
               - label: "href"
                 name: "href"
                 widget: "string"
+      - label: "Stats"
+        name: "stats"
+        widget: "list"
+        summary: '{{fields.label}}'
+        fields:
+          - label: "Label"
+            name: "label"
+            widget: "string"
+          - label: "Value"
+            name: "value"
+            widget: "string"
+      
