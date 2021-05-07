@@ -1,27 +1,38 @@
 import React from "react";
 import { graphql } from "gatsby";
+import styled from "@emotion/styled";
 import Layout from "../components/Layout";
 
-const IndexPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark;  
+const OfficePageContainer = styled.div`
+  max-width: 1152px;
+  padding: 20px;
+  color: #1c1c1c;
+  flex-grow: 1;
+  margin: 0 auto;
+  position: relative;
+  width: auto;
+`;
+
+const Tag = styled.div``;
+
+const OfficePage = ({ data }) => {
+  const { frontmatter } = data.markdownRemark;
+  const { hero } = frontmatter;
+  const { tag } = hero;
 
   return (
     <Layout>
-      {Object.keys(frontmatter).map((key) => {
-        return (
-          <div key={key}>
-            {key} - {frontmatter[key]}
-          </div>
-        );
-      })}
+      <OfficePageContainer>
+        <Tag>{tag}</Tag>        
+      </OfficePageContainer>
     </Layout>
   );
 };
 
-export default IndexPage;
+export default OfficePage;
 
 export const pageQuery = graphql`
-  query IndexPageTemplate {
+  query OfficePageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "office-page" } }) {
       frontmatter {
         location
@@ -30,6 +41,9 @@ export const pageQuery = graphql`
         address
         email
         openingDate
+        hero {
+          tag
+        }
       }
     }
   }
