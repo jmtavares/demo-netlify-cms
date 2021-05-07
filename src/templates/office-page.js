@@ -7,6 +7,7 @@ import Stats from '../components/Stats'
 import JobOpenings from '../components/JobOpenings'
 import Quote from '../components/Quote'
 import Map from '../components/Map'
+import Footer from '../components/Footer'
 
 const OfficePage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
@@ -34,6 +35,7 @@ const OfficePage = ({ data }) => {
       <Quote data={quote} />
 
       <Map data={JSON.parse(map)} />
+      <Footer offices={data.allMarkdownRemark.edges} />
     </Layout>
   )
 }
@@ -42,6 +44,21 @@ export default OfficePage
 
 export const pageQuery = graphql`
   query OfficePageTemplate {
+    allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "office-page" } } }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            location
+          }
+          fields {
+            slug
+          }
+        }
+      }
+    }
+
     markdownRemark(frontmatter: { templateKey: { eq: "office-page" } }) {
       frontmatter {
         location
