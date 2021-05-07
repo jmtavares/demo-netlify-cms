@@ -1,10 +1,25 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { Link } from 'gatsby'
+import styled from '@emotion/styled'
+import { Link } from './Typography'
+
+const ColumnTitle = styled.div`
+  font-size: 24px;
+  display: flex;
+  font-weight: bold;
+`
+
+const Ul = styled.ul`
+  margin: 0 !important;
+`
+
+const StyledLink = styled(Link)`
+  border: none;
+  padding: 10px !important;
+  font-size: 16px;
+`
 
 const Footer = ({ offices }) => {
-  console.log(offices)
-
   return (
     <footer className="footer has-text-white-ter">
       <div className="content has-text-centered"></div>
@@ -13,55 +28,53 @@ const Footer = ({ offices }) => {
           <div style={{ maxWidth: '100vw' }} className="columns">
             <div className="column is-4">
               <section className="menu">
-                <ul className="menu-list">
+                <ColumnTitle>Pages</ColumnTitle>
+                <Ul className="menu-list">
                   <li>
-                    <Link to="/" className="navbar-item">
+                    <StyledLink to="/" className="navbar-item">
                       Home
-                    </Link>
+                    </StyledLink>
                   </li>
                   <li>
-                    <Link className="navbar-item" to="/">
+                    <StyledLink className="navbar-item" to="/">
                       About
-                    </Link>
+                    </StyledLink>
                   </li>
                   <li>
-                    <Link className="navbar-item" to="/">
+                    <StyledLink className="navbar-item" to="/">
                       Products
-                    </Link>
+                    </StyledLink>
                   </li>
                   <li>
-                    <Link className="navbar-item" to="/">
+                    <StyledLink className="navbar-item" to="/">
                       Form Examples
-                    </Link>
+                    </StyledLink>
                   </li>
                   <li>
-                    <a
-                      className="navbar-item"
-                      href="/admin"
-                      rel="noopener noreferrer"
-                    >
+                    <StyledLink className="navbar-item" to="/admin">
                       Admin
-                    </a>
+                    </StyledLink>
                   </li>
-                </ul>
+                </Ul>
               </section>
             </div>
             <div className="column is-4">
               <section className="menu">
-                <ul className="menu-list">
+                <ColumnTitle>Offices</ColumnTitle>
+                <Ul className="menu-list">
                   {offices.map((office) => {
                     return (
                       <li key={office.node.fields.slug}>
-                        <Link
+                        <StyledLink
                           to={office.node.fields.slug}
                           className="navbar-item"
                         >
                           {office.node.frontmatter.location}
-                        </Link>
+                        </StyledLink>
                       </li>
                     )
                   })}
-                </ul>
+                </Ul>
               </section>
             </div>
           </div>

@@ -43,7 +43,7 @@ const OfficePage = ({ data }) => {
 export default OfficePage
 
 export const pageQuery = graphql`
-  query OfficePageTemplate {
+  query OfficePageTemplate($id: String!) {
     allMarkdownRemark(
       filter: { frontmatter: { templateKey: { eq: "office-page" } } }
     ) {
@@ -59,7 +59,7 @@ export const pageQuery = graphql`
       }
     }
 
-    markdownRemark(frontmatter: { templateKey: { eq: "office-page" } }) {
+    markdownRemark(id: { eq: $id }) {
       frontmatter {
         location
         country
