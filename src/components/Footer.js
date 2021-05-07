@@ -20,9 +20,9 @@ const StyledLink = styled(Link)`
 `
 
 const Footer = () => {
-  const { allMarkdownRemark } = useStaticQuery(graphql`
+  const { offices, socialLinks } = useStaticQuery(graphql`
     query FooterTemplate {
-      allMarkdownRemark(
+      offices: allMarkdownRemark(
         filter: { frontmatter: { templateKey: { eq: "office-page" } } }
       ) {
         edges {
@@ -36,8 +36,24 @@ const Footer = () => {
           }
         }
       }
+
+      socialLinks: allMarkdownRemark(
+        filter: { frontmatter: { templateKey: { eq: "social-page" } } }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              label
+              network_code
+              href
+            }
+          }
+        }
+      }
     }
   `)
+
+  console.log(socialLinks)
 
   return (
     <footer className="footer has-text-white-ter">
@@ -81,7 +97,7 @@ const Footer = () => {
               <section className="menu">
                 <ColumnTitle>Offices</ColumnTitle>
                 <Ul className="menu-list">
-                  {allMarkdownRemark.edges.map((office) => {
+                  {offices.edges.map((office) => {
                     return (
                       <li key={office.node.fields.slug}>
                         <StyledLink
@@ -89,6 +105,25 @@ const Footer = () => {
                           className="navbar-item"
                         >
                           {office.node.frontmatter.location}
+                        </StyledLink>
+                      </li>
+                    )
+                  })}
+                </Ul>
+              </section>
+            </div>
+            <div className="column is-4">
+              <section className="menu">
+                <ColumnTitle>Social</ColumnTitle>
+                <Ul className="menu-list">
+                  {socialLinks.edges.map((social) => {
+                    return (
+                      <li key={social.node.frontmatter.label}>
+                        <StyledLink
+                          to={social.node.frontmatter.href}
+                          className="navbar-item"
+                        >
+                          {social.node.frontmatter.label}
                         </StyledLink>
                       </li>
                     )
