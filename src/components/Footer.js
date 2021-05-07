@@ -19,6 +19,10 @@ const StyledLink = styled(Link)`
   font-size: 16px;
 `
 
+const NetworkIcon = styled.i`
+  margin-right: 10px;
+`
+
 const Footer = () => {
   const { offices, socialLinks } = useStaticQuery(graphql`
     query FooterTemplate {
@@ -53,8 +57,6 @@ const Footer = () => {
     }
   `)
 
-  console.log(socialLinks)
-
   return (
     <footer className="footer has-text-white-ter">
       <div className="content has-text-centered"></div>
@@ -68,21 +70,6 @@ const Footer = () => {
                   <li>
                     <StyledLink to="/" className="navbar-item">
                       Home
-                    </StyledLink>
-                  </li>
-                  <li>
-                    <StyledLink className="navbar-item" to="/">
-                      About
-                    </StyledLink>
-                  </li>
-                  <li>
-                    <StyledLink className="navbar-item" to="/">
-                      Products
-                    </StyledLink>
-                  </li>
-                  <li>
-                    <StyledLink className="navbar-item" to="/">
-                      Form Examples
                     </StyledLink>
                   </li>
                   <li>
@@ -123,6 +110,10 @@ const Footer = () => {
                           to={social.node.frontmatter.href}
                           className="navbar-item"
                         >
+                          <NetworkIcon
+                            className={`fab fa-lg fa-${social.node.frontmatter.network_code}`}
+                          />
+
                           {social.node.frontmatter.label}
                         </StyledLink>
                       </li>

@@ -28,7 +28,7 @@ collections:
       - label: "Network Code" 
         name: "network_code" 
         widget: "select"
-        options: ["facebook", "twitter", "instagram", "linkedin"]
+        options: ["facebook", "twitter", "instagram", "linkedin", "youtube"]
       - label: "href" 
         name: "href" 
         widget: "string"
