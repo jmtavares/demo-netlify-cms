@@ -68,17 +68,17 @@ const JobOpenings = ({ data }) => {
           <Stat>
             <Value>35</Value>
             <Description>Engineering</Description>
-            <LearnMore>Learn More →</LearnMore>
+            <LearnMore to="/">Learn More →</LearnMore>
           </Stat>
           <Stat>
             <Value>12</Value>
             <Description>Product</Description>
-            <LearnMore>Learn More →</LearnMore>
+            <LearnMore to="/">Learn More →</LearnMore>
           </Stat>
           <Stat>
             <Value>10</Value>
             <Description>Management</Description>
-            <LearnMore>Learn More →</LearnMore>
+            <LearnMore to="/">Learn More →</LearnMore>
           </Stat>
         </StatsContainer>
       </JobOpeningsInnerContainer>

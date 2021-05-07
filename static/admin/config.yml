@@ -12,6 +12,29 @@ media_folder: static/img
 public_folder: /img
 
 collections:
+  - name: "social_navigation"
+    label: "Social Navigation"
+    src: "src/page/social"
+    create: true
+    slug: "{{network_code}}"
+    fields:
+      - label: "Template Key"
+        name: "templateKey"
+        widget: "hidden"
+        default: "social-page"
+
+      - label: "Label" 
+        name: "label" 
+        widget: "string"
+      - label: "Network Code" 
+        name: "network_code" 
+        widget: "select"
+        options: ["facebook", "twitter", "instagram", "linkedin"]
+      - label: "href" 
+        name: "href" 
+        widget: "string"
+
+
   - name: "office"
     label: "Office"
     folder: "src/pages/offices"
@@ -150,17 +173,5 @@ collections:
 
       - label: "Map"
         name: "map"
-        widget: "map"
-
-      - label: "Social Navigation"
-        name: "social_navigation"
-        widget: "list"
-        fields: 
-          - label: "Label"
-            name: "label"
-            widget: string
-          - label: "Network Code"
-            name: "network_code"
-            widget: "select"
-            options: ["facebook", "twitter", "instagram", "linkedin"]
+        widget: "map"  
       
