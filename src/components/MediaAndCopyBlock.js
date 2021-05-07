@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "@emotion/styled";
-import Img from "gatsby-image";
-import { Title, Text, Link } from "./Typography";
+import React from 'react'
+import styled from '@emotion/styled'
+import Img from 'gatsby-image'
+import { Title, Text, Link } from './Typography'
 
 const MediaAndCopyBlockContainer = styled.div`
   max-width: 1152px;
@@ -15,42 +15,42 @@ const MediaAndCopyBlockContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 50px;
-`;
+`
 
 const CTA = styled(Link)`
-    margin: 20px 0;
-`;
+  margin: 20px 0;
+`
 
 const ImagesContainer = styled.div`
   position: relative;
   height: 550px;
-`;
+`
 
 const LargeImage = styled(Img)`
   position: absolute !important;
   top: 0;
   right: 0;
-`;
+`
 
 const SmallImage = styled(Img)`
   position: absolute !important;
   bottom: 0;
   left: 0;
-`;
+`
 
 const CopyBlockContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-`;
+`
 
 const StyledTitle = styled(Title)`
   margin-bottom: 40px;
-`;
+`
 
 const MediaAndCopyBlock = ({ data }) => {
-  const { title, summary, cta } = data;
+  const { title, summary, cta } = data
 
   return (
     <MediaAndCopyBlockContainer>
@@ -64,7 +64,7 @@ const MediaAndCopyBlock = ({ data }) => {
         <CTA to={cta.href}>{cta.text}</CTA>
       </CopyBlockContainer>
     </MediaAndCopyBlockContainer>
-  );
-};
+  )
+}
 
-export default MediaAndCopyBlock;
+export default MediaAndCopyBlock

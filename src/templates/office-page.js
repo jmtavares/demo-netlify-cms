@@ -1,23 +1,40 @@
-import React from "react";
-import { graphql } from "gatsby";
-import Layout from "../components/Layout";
-import Hero from "../components/Hero";
-import MediaAndCopyBlock from "../components/MediaAndCopyBlock";
+import React from 'react'
+import { graphql } from 'gatsby'
+import Layout from '../components/Layout'
+import Hero from '../components/Hero'
+import MediaAndCopyBlock from '../components/MediaAndCopyBlock'
+import Stats from '../components/Stats'
+import JobOpenings from '../components/JobOpenings'
+import Quote from '../components/Quote'
 
 const OfficePage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark;
-  const { address, hero, email, media_and_copy_block } = frontmatter;
+  const { frontmatter } = data.markdownRemark
+  const {
+    address,
+    hero,
+    email,
+    media_and_copy_block,
+    stats,
+    job_openings,
+    quote,
+  } = frontmatter
 
   return (
     <Layout>
       <Hero hero={hero} address={address} email={email} />
 
-      <MediaAndCopyBlock data={media_and_copy_block}/>
-    </Layout>
-  );
-};
+      <MediaAndCopyBlock data={media_and_copy_block} />
 
-export default OfficePage;
+      <Stats data={stats} />
+
+      <JobOpenings data={job_openings} />
+
+      <Quote data={quote} />
+    </Layout>
+  )
+}
+
+export default OfficePage
 
 export const pageQuery = graphql`
   query OfficePageTemplate {
@@ -41,6 +58,7 @@ export const pageQuery = graphql`
             }
           }
         }
+
         media_and_copy_block {
           title
           media_side
@@ -64,7 +82,29 @@ export const pageQuery = graphql`
             }
           }
         }
+
+        stats {
+          label
+          value
+        }
+
+        job_openings {
+          summary
+          api_config
+        }
+
+        quote {
+          quote
+          author
+          media {
+            childImageSharp {
+              fixed(width: 279, height: 407, quality: 100) {
+                ...GatsbyImageSharpFixed_withWebp_noBase64
+              }
+            }
+          }
+        }
       }
     }
   }
-`;
+`
