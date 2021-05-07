@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "@emotion/styled";
+import React from 'react'
+import styled from '@emotion/styled'
 
 const MapContainer = styled.div`
   max-width: 1152px;
@@ -10,16 +10,16 @@ const MapContainer = styled.div`
   position: relative;
   width: auto;
   height: 500px;
-`;
+`
 
 const IframeMap = styled.iframe`
   width: 100%;
   height: 500px;
   border: 0;
-`;
+`
 
 const Map = ({ data }) => {
-  const src = `https://maps.google.com/maps?q=${data.coordinates[1]},${data.coordinates[0]}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
+  const src = `https://maps.google.com/maps?q=${data.coordinates[1]},${data.coordinates[0]}&t=&z=15&ie=UTF8&iwloc=&output=embed`
 
   return (
     <MapContainer>
@@ -34,7 +34,7 @@ const Map = ({ data }) => {
         loading="lazy"
       />
     </MapContainer>
-  );
-};
+  )
+}
 
-export default Map;
+export default Map

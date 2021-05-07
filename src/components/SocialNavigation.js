@@ -28,7 +28,7 @@ const Value = styled.div`
   font-weight: bold;
 `
 
-const SocialNavigation= ({ data }) => {
+const SocialNavigation = ({ data }) => {
   return (
     <SocialNavigationContainer>
       {data.map(({ label, value }) => {

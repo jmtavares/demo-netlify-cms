@@ -1,15 +1,15 @@
-import React from "react";
-import { graphql } from "gatsby";
-import Layout from "../components/Layout";
-import Hero from "../components/Hero";
-import MediaAndCopyBlock from "../components/MediaAndCopyBlock";
-import Stats from "../components/Stats";
-import JobOpenings from "../components/JobOpenings";
-import Quote from "../components/Quote";
-import Map from "../components/Map";
+import React from 'react'
+import { graphql } from 'gatsby'
+import Layout from '../components/Layout'
+import Hero from '../components/Hero'
+import MediaAndCopyBlock from '../components/MediaAndCopyBlock'
+import Stats from '../components/Stats'
+import JobOpenings from '../components/JobOpenings'
+import Quote from '../components/Quote'
+import Map from '../components/Map'
 
 const OfficePage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark;
+  const { frontmatter } = data.markdownRemark
   const {
     address,
     hero,
@@ -18,8 +18,8 @@ const OfficePage = ({ data }) => {
     stats,
     job_openings,
     quote,
-    map    
-  } = frontmatter;
+    map,
+  } = frontmatter
 
   return (
     <Layout>
@@ -33,12 +33,12 @@ const OfficePage = ({ data }) => {
 
       <Quote data={quote} />
 
-      <Map data={JSON.parse(map)} />      
+      <Map data={JSON.parse(map)} />
     </Layout>
-  );
-};
+  )
+}
 
-export default OfficePage;
+export default OfficePage
 
 export const pageQuery = graphql`
   query OfficePageTemplate {
@@ -108,8 +108,8 @@ export const pageQuery = graphql`
               }
             }
           }
-        }        
+        }
       }
     }
   }
-`;
+`
