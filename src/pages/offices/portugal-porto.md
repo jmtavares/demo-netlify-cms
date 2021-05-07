@@ -12,6 +12,6 @@ openingDate: 2021-05-06T14:11:01.264Z
 hero:
   title: Title
   summary: Summary
-  tag: Tag
+  tag: Fun Facts
   image: https://mindera.com/928ffce31d41a6102b660c391134657b.jpg
 ---
