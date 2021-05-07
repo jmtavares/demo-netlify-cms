@@ -12,7 +12,7 @@ const TemplateWrapper = ({ children }) => {
         <html lang="en" />
         <title>{title}</title>
         <meta name="description" content={description} />
-      </Helmet>      
+      </Helmet>
       <div>{children}</div>
       <Footer />
     </div>

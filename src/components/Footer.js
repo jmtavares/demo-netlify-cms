@@ -5,8 +5,7 @@ const Footer = class extends React.Component {
   render() {
     return (
       <footer className="footer has-text-white-ter">
-        <div className="content has-text-centered">          
-        </div>
+        <div className="content has-text-centered"></div>
         <div className="content has-text-centered has-text-white-ter">
           <div className="container has-text-white-ter">
             <div style={{ maxWidth: '100vw' }} className="columns">
@@ -36,7 +35,7 @@ const Footer = class extends React.Component {
                     <li>
                       <a
                         className="navbar-item"
-                        href="/admin"                        
+                        href="/admin"
                         rel="noopener noreferrer"
                       >
                         Admin
@@ -49,8 +48,11 @@ const Footer = class extends React.Component {
                 <section className="menu">
                   <ul className="menu-list">
                     <li>
-                      <Link to="/offices/portugal-porto/" className="navbar-item">
-                        Porto
+                      <Link
+                        to="/offices/united-kingdom-leicester/"
+                        className="navbar-item"
+                      >
+                        Leicester
                       </Link>
                     </li>
                   </ul>
