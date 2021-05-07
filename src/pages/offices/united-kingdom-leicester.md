@@ -46,4 +46,20 @@ quote:
     Something that is specific to working in this location
   author: Minders Name, Role
   media: /img/screenshot-2021-05-07-at-15.19.51.png
+media_carousel:
+  title: Leicester Office
+  images:
+    - image: https://mindera.com/f82e3429b3eac15efea6ebd79c5943d4.jpg
+    - image: https://mindera.com/d0918f0bdea81db48a412e44ce5cc90a.jpg
+    - image: https://mindera.com/928ffce31d41a6102b660c391134657b.jpg
+map: '{"type":"Point","coordinates":[-1.1334532,52.6344846]}'
+social_navigation:
+  - label: Facebook
+    network_code: facebook
+  - label: Twitter
+    network_code: twitter
+  - label: Linkedin
+    network_code: linkedin
+  - label: Instagram
+    network_code: instagram
 ---
