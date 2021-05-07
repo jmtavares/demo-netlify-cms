@@ -26,6 +26,14 @@ media_and_copy_block:
 stats:
   - label: Opened
     value: "2015"
+  - label: Minders
+    value: "400"
+  - label: Lines of code
+    value: 900k
+  - label: Something
+    value: "322"
+  - label: Other thing
+    value: "400"
 job_openings:
   summary: asdasdas
   api_config: "{}"
